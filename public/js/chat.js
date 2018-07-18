@@ -40,9 +40,12 @@ socket.on('updateUserList', function(users) {
     jQuery('#users').html(ol)
 })
 
-socket.on('newMessage', function(message) {
+socket.on('newMessage', function(isRobot, message) {
     const formattedTime = moment(message.createdAt).format('h:mm a')
-    const template = jQuery('#message-template').html()
+    let template = jQuery('#message-template').html()
+    if(isRobot) {
+        template = jQuery('#message-robot-template').html()
+    }
     const html = Mustache.render(template, {
         text: message.text,
         from: message.from,

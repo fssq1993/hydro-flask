@@ -26,6 +26,18 @@
         </di>
     </div>
 
+    <script id="message-robot-template" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                <h6 style="margin-bottom: 0">{{from}}</h6>
+                <span style="margin-left: 10px">{{createdAt}}</span>
+            </div>
+            <div class="message_body">
+                <p style="margin-bottom: 0" class="messages-robot">{{text}}</p>
+            </div>
+        </li>
+    </script>
+
     <script id="message-template" type="text/template">
         <li class="message">
             <div class="message__title">
@@ -41,8 +53,8 @@
     <script id="location-message-template" type="text/template">
         <li class="message">
             <div class="message__title">
-                <h4>{{from}}</h4>
-                <span>{{createdAt}}</span>
+                <h6 style="margin-bottom: 0">{{from}}</h6>
+                <span style="margin-left: 10px">{{createdAt}}</span>
             </div>
             <div class="message_body">
                 <p>
