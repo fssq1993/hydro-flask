@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatRoom</title>
 </head>
 
 <body class="chat">
     <div class="chat__sidebar">
-        <h3>People</h3>
+        <h3>Online Members</h3>
         <div id="users"></div>
     </div>
     <div class="chat__main">
@@ -19,20 +20,20 @@
         <div class="chat__footer">
             <form id="message-form">
                 <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
-                <button>Send</button>
+                <button class="btn btn-primary">Send</button>
             </form>
-            <button id="send-location">Send location</button>
+            <button id="send-location" class="btn btn-info">Send location</button>
         </di>
     </div>
 
     <script id="message-template" type="text/template">
         <li class="message">
             <div class="message__title">
-                <h4>{{from}}</h4>
-                <span>{{createdAt}}</span>
+                <h6 style="margin-bottom: 0">{{from}}</h6>
+                <span style="margin-left: 10px">{{createdAt}}</span>
             </div>
             <div class="message_body">
-                <p>{{text}}</p>
+                <p style="margin-bottom: 0" class="messages">{{text}}</p>
             </div>
         </li>
     </script>
@@ -56,6 +57,7 @@
     <script src="/js/libs/moment.js"></script>
     <script src="/js/libs/mustache.min.js"></script>
     <script src="/js/libs/deparam.js"></script>
+    <script src="/js/libs/bootstrap.min.js"></script>
     <script src="/js/chat.js"></script>
 </body>
 
